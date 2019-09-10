@@ -26,7 +26,34 @@ namespace DataAccessLayer
 
         public List<Employee> GetAllEmployees()
         {
-            throw new NotImplementedException();
+            List<Employee> result = new List<Employee>();
+            using (Model.Entity en = new Model.Entity())
+            {
+                en.EmployeesTPH.ToList().ForEach(x => {
+                    if (x.GetType().Equals("FullTimeEmployye"))
+                    {
+                        result.Add(
+                            new FullTimeEmployee() {
+                                Id = x.EmployeeId,
+                                Name = x.Name,
+                                StartDate = x.StartDate
+                            }
+                        );
+                    }
+                    else
+                    {
+                        result.Add(
+                            new PartTimeEmployee()
+                            {
+                                Id = x.EmployeeId,
+                                Name = x.Name,
+                                StartDate = x.StartDate
+                            }
+                        );
+                    }
+                });
+            }
+            return result;
         }
 
         public Employee GetEmployee(int id)
