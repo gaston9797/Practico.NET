@@ -13,5 +13,10 @@ namespace WebApplication.Employees
         {
 
         }
+
+        protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

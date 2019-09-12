@@ -78,9 +78,10 @@ namespace DataAccessLayer
                 en.EmployeeTPH.ToList().ForEach(x => {
                     if (x.GetType() == typeof(Shared.Entities.FullTimeEmployee))
                     {
-                        Model.FullTimeEmployee e = (Model.FullTimeEmployee) x;
+                        Model.FullTimeEmployee e = (Model.FullTimeEmployee)x;
                         result.Add(
-                            new FullTimeEmployee() {
+                            new FullTimeEmployee()
+                            {
                                 Id = e.EmployeeId,
                                 Name = e.Name,
                                 StartDate = e.StartDate,

@@ -1,16 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListEmployees.aspx.cs" Inherits="WebApplication.Employees.ListEmployees" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListEmployees.aspx.cs" Inherits="WebApplication.Employees.ListEmployees" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <p>
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="EmployeesDS" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+            </Columns>
+        </asp:GridView>
+        <asp:ObjectDataSource
+        ID="EmployeesDS"
+        TypeName="Controllers.EmployeeController"
+        SelectMethod="GetEmployees"
+        runat="server">
+    </asp:ObjectDataSource>
+    </p>
+</asp:Content>
