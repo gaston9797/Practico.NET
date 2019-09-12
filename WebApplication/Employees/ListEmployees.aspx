@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListEmployees.aspx.cs" Inherits="WebApplication.Employees.ListEmployees" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="EmployeesDS" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="274px">
+        <br />
+        <br />
+        <asp:Button 
+            ID="NewEmployee" 
+            runat="server" 
+            CssClass="btn btn-primary"
+            Text="New Employee" 
+            OnClick="NewEmployee_Click" />
+        <br />
+        <br />
+        <asp:GridView ID="EmployeeGV" runat="server" DataSourceID="EmployeesDS" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="274px" AutoGenerateSelectButton="True"
+            OnSelectedIndexChanged="EmployeeGV_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />

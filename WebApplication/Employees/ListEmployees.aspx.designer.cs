@@ -13,13 +13,22 @@ namespace WebApplication.Employees {
     public partial class ListEmployees {
         
         /// <summary>
-        /// Control GridView1.
+        /// Control NewEmployee.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button NewEmployee;
+        
+        /// <summary>
+        /// Control EmployeeGV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView EmployeeGV;
         
         /// <summary>
         /// Control EmployeesDS.

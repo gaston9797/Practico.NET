@@ -13,7 +13,7 @@ namespace DataAccessLayer
         {
             using (Model.Entity en = new Model.Entity())
             {
-                if (emp.GetType() == typeof(Model.FullTimeEmployee))
+                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
                 {
                     FullTimeEmployee em = (FullTimeEmployee)emp;
                     Model.FullTimeEmployee e = new Model.FullTimeEmployee();
@@ -42,13 +42,14 @@ namespace DataAccessLayer
             using (Model.Entity en = new Model.Entity())
             {
                 en.Employees.Remove(en.Employees.Find(id));
+                en.SaveChanges();
             }
         }
 
         public void UpdateEmployee(Employee emp)
         {
             using (Model.Entity en = new Model.Entity()) {
-                if (emp.GetType() == typeof(Model.FullTimeEmployee))
+                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
                 {
                     Model.FullTimeEmployee e = (Model.FullTimeEmployee)en.Employees.Find(emp.Id);
                     FullTimeEmployee em = (FullTimeEmployee)emp;

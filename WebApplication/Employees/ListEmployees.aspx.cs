@@ -14,6 +14,17 @@ namespace WebApplication.Employees
 
         }
 
+        protected void NewEmployee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Employees/AgregarEmployee.aspx");
+        }
+
+        protected void EmployeeGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = EmployeeGV.Rows[EmployeeGV.SelectedIndex].Cells[1].Text;
+            Response.Redirect("~/Employees/AgregarEmployee.aspx?Id=" + id);
+        }
+
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
 
