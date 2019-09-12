@@ -33,7 +33,7 @@
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="Entity" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="EmployeeTPH" EntityType="practico.netModel.Employee" />
+          <EntitySet Name="Employees" EntityType="practico.netModel.Employee" />
         </EntityContainer>
         <EntityType Name="PartTimeEmployee" BaseType="practico.netModel.Employee" >
           <Property Name="HourlyRate" Type="Double" Nullable="false" />
@@ -47,7 +47,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="practiconetModelStoreContainer" CdmEntityContainer="Entity">
-          <EntitySetMapping Name="EmployeeTPH">
+          <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="IsTypeOf(practico.netModel.Employee)">
               <MappingFragment StoreEntitySet="EmployeesTPH">
                 <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />

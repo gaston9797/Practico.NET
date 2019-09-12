@@ -13,7 +13,7 @@ namespace DataAccessLayer
         {
             using (Model.Entity en = new Model.Entity())
             {
-                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                if (emp.GetType() == typeof(Model.FullTimeEmployee))
                 {
                     FullTimeEmployee em = (FullTimeEmployee)emp;
                     Model.FullTimeEmployee e = new Model.FullTimeEmployee();
@@ -21,7 +21,7 @@ namespace DataAccessLayer
                     e.Name = em.Name;
                     e.StartDate = em.StartDate;
                     e.Salary = em.Salary;
-                    en.EmployeeTPH.Add(e);
+                    en.Employees.Add(e);
                     en.SaveChanges();
                 }
                 else {
@@ -31,7 +31,7 @@ namespace DataAccessLayer
                     e.Name = em.Name;
                     e.StartDate = em.StartDate;
                     e.HourlyRate = em.HourlyRate;
-                    en.EmployeeTPH.Add(e);
+                    en.Employees.Add(e);
                     en.SaveChanges();
                 }
             }
@@ -41,16 +41,16 @@ namespace DataAccessLayer
         {
             using (Model.Entity en = new Model.Entity())
             {
-                en.EmployeeTPH.Remove(en.EmployeeTPH.Find(id));
+                en.Employees.Remove(en.Employees.Find(id));
             }
         }
 
         public void UpdateEmployee(Employee emp)
         {
             using (Model.Entity en = new Model.Entity()) {
-                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                if (emp.GetType() == typeof(Model.FullTimeEmployee))
                 {
-                    Model.FullTimeEmployee e = (Model.FullTimeEmployee)en.EmployeeTPH.Find(emp.Id);
+                    Model.FullTimeEmployee e = (Model.FullTimeEmployee)en.Employees.Find(emp.Id);
                     FullTimeEmployee em = (FullTimeEmployee)emp;
                     e.EmployeeId = em.Id;
                     e.Name = em.Name;
@@ -59,7 +59,7 @@ namespace DataAccessLayer
                     en.SaveChanges();
                 }
                 else {
-                    Model.PartTimeEmployee e = (Model.PartTimeEmployee)en.EmployeeTPH.Find(emp.Id);
+                    Model.PartTimeEmployee e = (Model.PartTimeEmployee)en.Employees.Find(emp.Id);
                     PartTimeEmployee em = (PartTimeEmployee)emp;
                     e.EmployeeId = em.Id;
                     e.Name = em.Name;
@@ -75,8 +75,8 @@ namespace DataAccessLayer
             List<Employee> result = new List<Employee>();
             using (Model.Entity en = new Model.Entity())
             {
-                en.EmployeeTPH.ToList().ForEach(x => {
-                    if (x.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                en.Employees.ToList().ForEach(x => {
+                    if (x.GetType() == typeof(Model.FullTimeEmployee))
                     {
                         Model.FullTimeEmployee e = (Model.FullTimeEmployee)x;
                         result.Add(
@@ -110,8 +110,8 @@ namespace DataAccessLayer
         public Employee GetEmployee(int id)
         {
             using (Model.Entity en = new Model.Entity()) {
-                Model.Employee e = en.EmployeeTPH.Find(id);
-                if (e.GetType() == typeof(Shared.Entities.FullTimeEmployee)) {
+                Model.Employee e = en.Employees.Find(id);
+                if (e.GetType() == typeof(Model.FullTimeEmployee)) {
                     Model.FullTimeEmployee em = (Model.FullTimeEmployee) e;
                     return new FullTimeEmployee() {
                         Id = em.EmployeeId,
