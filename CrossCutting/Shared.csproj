@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ApiEmployee.cs" />
     <Compile Include="Entities\DataEmployee.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\FullTimeEmployee.cs" />
