@@ -11,13 +11,14 @@
             OnClick="NewEmployee_Click" />
         <br />
         <br />
-        <asp:GridView ID="EmployeeGV" runat="server" DataSourceID="EmployeesDS" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="274px" AutoGenerateSelectButton="True"
+        <asp:GridView ID="EmployeeGV" runat="server" DataSourceID="EmployeesDS" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="1107px" AutoGenerateSelectButton="True"
             OnSelectedIndexChanged="EmployeeGV_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -33,7 +34,7 @@
         <asp:ObjectDataSource
         ID="EmployeesDS"
         TypeName="Controllers.EmployeeController"
-        SelectMethod="GetEmployees"
+        SelectMethod="GetDataEmployees"
         runat="server">
     </asp:ObjectDataSource>
     </p>
