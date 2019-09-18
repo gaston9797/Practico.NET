@@ -7,7 +7,9 @@ using System.Runtime.Serialization;
 
 namespace Shared.Entities
 {
-    [KnownType(typeof(Employee))]
+    [DataContract]
+    [KnownType(typeof(PartTimeEmployee))]
+    [KnownType(typeof(FullTimeEmployee))]
     public abstract class Employee
     {
         public int Id { get; set; }

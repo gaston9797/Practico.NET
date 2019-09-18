@@ -10,22 +10,21 @@ namespace Controllers
 {
     public class EmployeeController
     {
-        private IBLEmployees _bl;
+        private WebApplication.ServiceReference.IServiceEmployees service;
 
         public EmployeeController()
         {
-            IDALEmployees dal = new DALEmployeesEF();
-            _bl = new BLEmployees(dal);
+            service = new WebApplication.ServiceReference.ServiceEmployeesClient();
         }
 
         public List<Shared.Entities.Employee> GetEmployees()
         {
-            return _bl.GetAllEmployees();
+            return service.GetAllEmployees();
         }
 
         public List<DataEmployee> GetDataEmployees()
         {
-            List<Employee> employees = _bl.GetAllEmployees();
+            List<Employee> employees = service.GetAllEmployees();
             List<DataEmployee> result = new List<DataEmployee>();
             employees.ToList().ForEach(x => {
                 if (x.GetType() == typeof(FullTimeEmployee))
@@ -52,22 +51,22 @@ namespace Controllers
 
         public void SaveEmployee(Shared.Entities.Employee e)
         {
-            _bl.AddEmployee(e);
+            service.AddEmployee(e);
         }
 
         public Shared.Entities.Employee GetEmployee(int Id)
         {
-            return _bl.GetEmployee(Id);
+            return service.GetEmployee(Id);
         }
 
         public void UpdateEmployee(Shared.Entities.Employee e)
         {
-            _bl.UpdateEmployee(e);
+            service.UpdateEmployee(e);
         }
 
         public void DeleteEmployee(int id)
         {
-            _bl.DeleteEmployee(id);
+            service.DeleteEmployee(id);
         }
     }
 }

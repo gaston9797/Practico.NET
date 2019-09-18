@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6a3db687-3697-42c5-b991-d8096df488ea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8834/tsi1/Web" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Web.xsd" MetadataType="Schema" ID="8dc7bb62-b052-4f73-8c64-31664ba881eb" SourceId="1" SourceUrl="http://localhost:8834/tsi1/Web?xsd=xsd1" />
+    <MetadataFile FileName="Web1.xsd" MetadataType="Schema" ID="0d5e00b0-9b9b-4c87-80b8-48cbe6bf86f9" SourceId="1" SourceUrl="http://localhost:8834/tsi1/Web?xsd=xsd0" />
+    <MetadataFile FileName="ServiceEmployees.wsdl" MetadataType="Wsdl" ID="62c38ae5-1379-4d08-9c6c-de0880154921" SourceId="1" SourceUrl="http://localhost:8834/tsi1/Web" />
+    <MetadataFile FileName="Web2.xsd" MetadataType="Schema" ID="5993d5f3-40d0-4d52-b413-bc16d25b04cc" SourceId="1" SourceUrl="http://localhost:8834/tsi1/Web?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
